@@ -50,6 +50,35 @@ function draw() {
     }
 }
 
+// Function to draw snowfall
+function drawSnowfall() {
+    // Add new snowflakes
+    if (frameCount % 5 === 0) {
+        snowflakes.push({
+            x: random(width), // Random x position
+            y: 0, // Start at the top
+            size: random(8,11), // Random size
+            speed: random(1, 3), // Random falling speed
+        });
+    }
+
+    // Draw and update snowflakes
+    for (let i = snowflakes.length - 1; i >= 0; i--) {
+        let snowflake = snowflakes[i];
+        fill(255); // White color for snowflakes
+        noStroke();
+        ellipse(snowflake.x, snowflake.y, snowflake.size);
+
+        // Update snowflake position
+        snowflake.y += snowflake.speed;
+
+        // Remove snowflake if it goes off the screen
+        if (snowflake.y > height) {
+            snowflakes.splice(i, 1);
+        }
+    }
+}
+
 // Player class
 class Player {
     constructor() {
