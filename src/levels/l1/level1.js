@@ -3,6 +3,8 @@ let playerImg; // Variable to hold the player image
 let player;
 const gravity = 0.5; // Gravity force
 let platforms = []; // Array to store floating platforms
+let snowflakes = []; // Declare snowflakes array
+
 
 // Preload assets
 function preload() {
@@ -31,6 +33,8 @@ function setup() {
 // Draw the game frame
 function draw() {
     clear(); // Clear the canvas to prevent trails
+    
+    drawSnowfall();
 
     drawCandyTheme();
 
