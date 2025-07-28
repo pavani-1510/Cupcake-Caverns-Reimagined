@@ -3,10 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cupcake Caverns</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
-    <script src="src/game.js"></script>
+    <title>Welcome to Cupcake Caverns</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('src/assets/background.jpg'); /* Corrected path to the background image */
+            background-size: cover; /* Ensure the image covers the entire screen */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Prevent the image from repeating */
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        img {
+            width: 200px; /* Set the width of the image */
+            height: auto; /* Maintain aspect ratio */
+            cursor: pointer; /* Change cursor to pointer on hover */
+            border-radius: 70%; /* Optional: Make the image circular */
+            border: 2px solid #333; /* Optional: Add a border */
+            margin-top: 400px; /* Add margin to move the button down */
+            margin-left: -50px; /* Add margin to move the button down */
+
+        }
+        img:hover {
+            border-color: #555; /* Change border color on hover */
+        }
+    </style>
 </head>
 <body>
+    <img src="src/assets/play.png" alt="Play Button" onclick="startGame()"> <!-- Image as a button -->
+
+    <script>
+        function startGame() {
+            window.location.href = "src/levels/l1/level1.html"; // Redirect to the game page
+        }
+    </script>
 </body>
 </html>

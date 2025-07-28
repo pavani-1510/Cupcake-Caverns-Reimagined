@@ -3,12 +3,11 @@ let playerImg; // Variable to hold the player image
 let player;
 const gravity = 0.5; // Gravity force
 let platforms = []; // Array to store floating platforms
-let showWinPopup = false; // Flag to show the win popup
-let popupAlpha = 0; // Transparency for the popup animation
 
 // Preload assets
 function preload() {
-    playerImg = loadImage("src/assets/player.png"); // Load the player image
+    // Update the path to player.png to reflect the new location of level1.js
+    playerImg = loadImage("../../assets/player.png");
 }
 
 // Setup the game
@@ -31,7 +30,8 @@ function setup() {
 
 // Draw the game frame
 function draw() {
-    background(255, 204, 204); // Light pink background
+    clear(); // Clear the canvas to prevent trails
+
     drawCandyTheme();
 
     // Draw floating platforms
@@ -45,13 +45,8 @@ function draw() {
 
     // Check if the player has fallen off the screen
     if (player.y > height) {
-        // Redirect to another HTML page
-        window.location.href = "src/gameover.html"; // Replace with your desired HTML page
-    }
-
-    // Show the win popup if the player reaches the last platform
-    if (showWinPopup) {
-        displayWinPopup();
+        // Redirect to the game over page using an absolute path
+        window.location.href = "/src/gameover.html"; // Absolute path to gameover.html
     }
 }
 
@@ -86,7 +81,8 @@ class Player {
 
                 // Check if the player is on the last platform
                 if (i === platforms.length - 1) {
-                    showWinPopup = true; // Trigger the win popup
+                    // Redirect to level2.html
+                    window.location.href = "../l2/level2.html"; // Update path to level2.html
                 }
             }
         }
@@ -124,21 +120,6 @@ class Player {
         // Restore the previous drawing state
         pop();
     }
-}
-
-// Function to display the win popup
-function displayWinPopup() {
-    popupAlpha += 5; // Gradually increase the transparency
-    if (popupAlpha > 255) popupAlpha = 255; // Cap the transparency at 255
-
-    fill(255, 182, 193, popupAlpha); // Pink background with transparency
-    rectMode(CENTER);
-    rect(width / 2, height / 2, 400, 200, 20); // Rounded rectangle
-
-    fill(0, 0, 0, popupAlpha); // White text with transparency
-    textAlign(CENTER, CENTER);
-    textSize(32);
-    text("Hurray! You Won!", width / 2, height / 2);
 }
 
 // Simplified candy-themed background

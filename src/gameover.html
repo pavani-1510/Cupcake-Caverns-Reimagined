@@ -11,38 +11,30 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #ffcccc;
+            background-color: #ffffff;
             font-family: Arial, sans-serif;
         }
         h1 {
             color: #333;
             margin-bottom: 20px;
         }
-        button {
-            width: 100px;
-            height: 100px;
-            font-size: 16px;
-            color: #fff;
-            background-color: #333;
-            border: none;
-            border-radius: 50%; /* Makes the button circular */
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        img {
+            width: 150px; /* Set the width of the image */
+            height: 150px; /* Set the height of the image */
+            cursor: pointer; /* Change cursor to pointer on hover */
         }
-        button:hover {
-            background-color: #555;
+        img:hover {
+            border-color: #555; /* Change border color on hover */
         }
     </style>
 </head>
 <body>
-    <h1>Game Over! Try Again?</h1>
-    <button onclick="redirectToHome()">Retry</button>
+    <h1>Don't give up! Try Again?</h1>
+    <img src="assets/retry.png" alt="Retry Button" onclick="redirectToHome()"> <!-- Image as a button -->
 
     <script>
         function redirectToHome() {
-            window.location.href = "https://pavani-1510.github.io/Cupcake-Caverns-Reimagined"; // Redirect to index.html in the parent directory
+            window.location.href = "levels/l1/level1.html"; // Redirect to level1.html
         }
     </script>
 </body>
