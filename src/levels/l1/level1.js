@@ -51,7 +51,6 @@ function draw() {
     if (player.y > height) {
         // Redirect to the game over page using an absolute path
         window.location.href = "/Cupcake-Caverns-Reimagined/src/gameover.html"
-
     }
 }
 
@@ -89,7 +88,8 @@ class Player {
     constructor() {
         this.x = 60;
         this.y = height - 100; // Start above the ground
-        this.size = 200; // Size of the player
+        this.width = 105; // Width of the player
+        this.height = 150; // Height of the player
         this.ySpeed = 0; // Vertical speed
         this.onGround = false; // Check if player is on the ground
     }
@@ -104,12 +104,12 @@ class Player {
         for (let i = 0; i < platforms.length; i++) {
             let platform = platforms[i];
             if (
-                this.x + this.size / 2 > platform.x &&
-                this.x - this.size / 2 < platform.x + platform.width &&
-                this.y + this.size / 2 >= platform.y &&
-                this.y + this.size / 2 <= platform.y + platform.height
+                this.x + this.width / 2 > platform.x &&
+                this.x - this.width / 2 < platform.x + platform.width &&
+                this.y + this.height / 2 >= platform.y &&
+                this.y + this.height / 2 <= platform.y + platform.height
             ) {
-                this.y = platform.y - this.size / 2;
+                this.y = platform.y - this.height / 2;
                 this.ySpeed = 0;
                 this.onGround = true;
 
@@ -145,10 +145,10 @@ class Player {
             // Flip the image horizontally
             translate(this.x, this.y);
             scale(-1, 1); // Flip horizontally
-            image(playerImg, 0, 0, this.size, this.size);
+            image(playerImg, 0, 0, this.width, this.height);
         } else {
             // Draw the image normally
-            image(playerImg, this.x, this.y, this.size, this.size);
+            image(playerImg, this.x, this.y, this.width, this.height);
         }
 
         // Restore the previous drawing state
