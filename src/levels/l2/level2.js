@@ -20,7 +20,7 @@ function setup() {
 
     // Redirect to home.html when the button is clicked
     homeButton.mousePressed(() => {
-        window.location.href = "../../../index.html";
+       window.location.href = "https://pavani-1510.github.io/Cupcake-Caverns-Reimagined";
     });
 }
 
