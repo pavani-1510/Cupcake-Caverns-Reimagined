@@ -46,7 +46,7 @@ function draw() {
     // Check if the player has fallen off the screen
     if (player.y > height) {
         // Redirect to the game over page using an absolute path
-        window.location.href = "/src/gameover.html"; // Absolute path to gameover.html
+        window.location.href = "/Cupcake-Caverns-Reimagined/src/levels/l1/level1.html"; // Absolute path to gameover.html
     }
 }
 
