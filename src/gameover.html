@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Over</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffcccc;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        button {
+            width: 100px;
+            height: 100px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #333;
+            border: none;
+            border-radius: 50%; /* Makes the button circular */
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Game Over! Try Again?</h1>
+    <button onclick="redirectToHome()">Retry</button>
+
+    <script>
+        function redirectToHome() {
+            window.location.href = "../index.html"; // Redirect to index.html in the parent directory
+        }
+    </script>
+</body>
+</html>
